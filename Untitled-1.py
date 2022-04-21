@@ -10,7 +10,7 @@ for i in range(0,segundos):
         time.sleep(1)
         os.system('cls')
         segundos -= 1
-print('olo')
+print('Prueba escribir un texto en el blog de notas')
 
 os.system('notepad.exe')
 
