@@ -12,9 +12,7 @@ for i in range(0,segundos):
         segundos -= 1
 print('Prueba escribir un texto en el blog de notas')
 
-os.system('notepad.exe')
+os.system('notepad.exe | echo "olo" > texto.txt')
 
-print('Metodo de prueba')
-print('Prueba del push N-2')
 
 
