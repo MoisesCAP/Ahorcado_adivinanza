@@ -1,23 +1,62 @@
 import os
 import time
+import random
 
-segundos = 10
+def adivinanza():
+        
+    vidas = 6
+    print(vidas)
+    print(' ')
+    numero_escogido = int(input('Ingresa un numero del 1 al 100: '))
+    numero_aleatorio = random.randint(1, 100)
+  
+    while numero_escogido != numero_aleatorio and vidas >= 2:
 
-print('BIENVENIDO')
+        if numero_escogido < numero_aleatorio:
+            print('Escoge un numero mas grande')
+            print('---------------------------------')
+            
+        else:
+            print('Escoge un numero mas pequeño')
+            print('---------------------------------')
+        vidas -= 1
+        print(f'VIDAS = {vidas}')
+            
+        numero_escogido = int(input('Escoge otro numero: '))
+        print(' ')
+        
+    if numero_escogido == numero_aleatorio:
+        print('¡Ganaste!')
+    else:
+        print('Te quedaste sin vidas :(')
+        print('Suerte para la proxima')
+        print(' ')
+        
+        
+def run():
+    segundos = 10
 
-desicion = input('''
-Quieres jugar un juego?
-S para si y N para no --> ''').lower()
+        print('BIENVENIDO')
 
-if desicion == 's':
-        print('Comenzamos en...')
-        for i in range(0,segundos):
-                print(' ')
-                print(f'Segundos: {segundos}')
-                time.sleep(1)
-                os.system('cls')
-                segundos -= 1
-else:
-        print('Aburrid@ :(')
+        desicion = input('''
+        Quieres jugar un juego?
+        S para si y N para no --> ''').lower()
+
+        if desicion == 's':
+                print('Comenzamos en...')
+                for i in range(0,segundos):
+                        print(' ')
+                        print(f'Segundos: {segundos}')
+                        time.sleep(1)
+                        os.system('cls')
+                        segundos -= 1
+                adivinanza()
+        else:
+                print('Aburrid@ :(')
+    
+
+if __name__ == '__main__':
+    run()
 
 
+    
