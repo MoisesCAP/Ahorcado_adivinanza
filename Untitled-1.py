@@ -5,8 +5,9 @@ import random
 def adivinanza():
         
     vidas = 6
-    print(vidas)
+    print(f'Tienes {vidas} vidas')
     print(' ')
+    print('Tienes que adivinar el numero que escogio la computadora')
     numero_escogido = int(input('Ingresa un numero del 1 al 100: '))
     numero_aleatorio = random.randint(1, 100)
   
@@ -34,25 +35,25 @@ def adivinanza():
         
         
 def run():
-    segundos = 10
+    segundos = 5
 
-        print('BIENVENIDO')
+    print('BIENVENIDO')
 
-        desicion = input('''
-        Quieres jugar un juego?
-        S para si y N para no --> ''').lower()
+    desicion = input('''
+    Quieres jugar un juego?
+    S para si y N para no --> ''').lower()
 
-        if desicion == 's':
-                print('Comenzamos en...')
-                for i in range(0,segundos):
-                        print(' ')
-                        print(f'Segundos: {segundos}')
-                        time.sleep(1)
-                        os.system('cls')
-                        segundos -= 1
-                adivinanza()
-        else:
-                print('Aburrid@ :(')
+    if desicion == 's':
+        print('Comenzamos en...')
+        for i in range(0,segundos):
+            print(' ')
+            print(f'Segundos: {segundos}')
+            time.sleep(1)
+            os.system('cls')
+            segundos -= 1
+        adivinanza()
+    else:
+        print('Aburrid@ :(')
     
 
 if __name__ == '__main__':
