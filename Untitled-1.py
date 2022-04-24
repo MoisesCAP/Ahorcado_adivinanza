@@ -8,8 +8,8 @@ def adivinanza():
     print(f'Tienes {vidas} vidas')
     print(' ')
     print('Tienes que adivinar el numero que escogio la computadora')
-    numero_escogido = int(input('Ingresa un numero del 1 al 100: '))
-    numero_aleatorio = random.randint(1, 100)
+    numero_escogido = int(input('Ingresa un numero del 1 al 50: '))
+    numero_aleatorio = random.randint(1, 50)
   
     while numero_escogido != numero_aleatorio and vidas >= 2:
 
