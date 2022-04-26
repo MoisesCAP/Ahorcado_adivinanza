@@ -5,10 +5,12 @@ import random
 def adivinanza():
         
     vidas = 6
-    print(vidas)
+    print(f'Vidas = {vidas}')
     print(' ')
-    numero_escogido = int(input('Ingresa un numero del 1 al 100: '))
-    numero_aleatorio = random.randint(1, 100)
+    print('Tienes que adivinar el numero que escogio la computadora...')
+    numero_escogido = int(input('Ingresa un numero del 1 al 50: '))
+    numero_aleatorio = random.randint(1, 50)
+    print(' ')
   
     while numero_escogido != numero_aleatorio and vidas >= 2:
 
@@ -33,10 +35,10 @@ def adivinanza():
         print(' ')
         
         
-def run():
+def run(nombre):
     segundos = 5
 
-    print('BIENVENIDO')
+    print(f'BIENVENIDO {nombre}')
 
     desicion = input('''
     Quieres jugar un juego?
@@ -50,13 +52,21 @@ def run():
             time.sleep(1)
             os.system('cls')
             segundos -= 1
-            adivinanza()
+        adivinanza()
     else:
         print('Aburrid@ :(')
     
 
+def datos():
+    print(' ')
+    nombre = input('Cual es tu nombre? -> ').upper()
+    edad = int(input('Que edad tienes? -> '))
+    print('----------------------------------------------')
+    run(nombre)
+
+
 if __name__ == '__main__':
-    run()
+    datos()
 
 
     
