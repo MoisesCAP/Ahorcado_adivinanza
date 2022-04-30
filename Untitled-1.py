@@ -37,6 +37,7 @@ def adivinanza():
 def run(nombre):
     segundos = 5
 
+print("La tierra es el tercer planeta del distema solar")
 
     desicion = input('''
     Quieres jugar un juego?
