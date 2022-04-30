@@ -65,7 +65,9 @@ def datos():
 
 
 if __name__ == '__main__':
+    numero1 = 4
+    numero2 = 40
+    operacion = numero1 / numero2
     datos()
-
 
     
