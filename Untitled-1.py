@@ -4,7 +4,7 @@ import random
 
 def adivinanza():
         
-    vidas = 6
+    vidas = 7
     print(f'Tienes {vidas} vidas')
     print(' ')
     print('Tienes que adivinar el numero que escogio la computadora')
