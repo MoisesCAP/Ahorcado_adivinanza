@@ -1,1 +1,1 @@
-# Prueba-
+Es un programa donde podras encontrar el juego del ahorcado y el juego de adivinar un numero (en donde la pc tiene que adivinar el numero que tu pensaste), se realizo como practca a la par que se tomaba el curso de platzi "Curso profesional de Git y Git hub"
