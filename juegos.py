@@ -3,9 +3,9 @@ import time
 import random
 
 def ahorcado():
-
-    meses = ['enero','febrero','marzo','abril','mayo','junio','julio',
-    'agosto','septiembre','octubre','noviembre','diciembre']
+    print('ADIVINA EL MES DEL AÑO (EN INGLES) QUE ESCOGIO LA PC...')
+    meses = ['january','february','march','april','may','june','july',
+    'august','september','october','november','december']
 
     palabra_aleatoria = random.choice(meses)
     
@@ -46,46 +46,54 @@ def ahorcado():
 
 
 def adivinanza():
-        
-    vidas = 7
+    print('''
+    Piensa en un numero del 1 al 30 el cual la 
+    computadora tiene que adivinar!
 
-    print('Adivina el numero que escogio la computadora...')
-    print(f'Tienes {vidas} vidas')
-    print(' ')
-    numero_escogido = int(input('Ingresa un numero del 1 al 50: '))
-    numero_aleatorio = random.randint(1, 50)
-    print(' ')
-  
-    while numero_escogido != numero_aleatorio and vidas >= 2:
+            REGLAS 
+    -> Para indicar que el numero es mas BAJO, oprime "z"
+    -> Para indicar que el numero es mas ALTO, oprime "m"
+    -> Si la computadora adivino el numero, oprime "g"
+    ''')
+    print('...')
+    time.sleep(7)
 
-        if numero_escogido < numero_aleatorio:
-            print('Escoge un numero mas grande')
-            print('---------------------------------')
-            
+    bajo = 1
+    alto = 30
+
+    while True:
+
+        numero_alea = random.randint(bajo,alto) # la pc escoge un numero
+        print() 
+        print(f'El numero que pensaste es: {numero_alea}?')
+
+        print()
+        usuario = input('z, m, g --> ').lower()
+
+        print()
+
+        if usuario == 'z':
+            alto = numero_alea - 1 #Ej: la pc escogio 25, pero el numero a adivinar es mas bajo, 
+            # se le resta -1, ahora la pc escogera del 24 para abajo, porque ya se sabe quue del 
+            # 25 para arriba no esta el numero a adivinar 
+
+        elif usuario == 'm':
+            bajo = numero_alea + 1 # De estas dos formas se ira modificando el rango, + , - 
+
+        elif usuario == 'g':
+            print('Fin del juego!')
+            break
+
         else:
-            print('Escoge un numero mas pequeño')
-            print('---------------------------------')
-        vidas -= 1
-        print(f'VIDAS = {vidas}')
-            
-        numero_escogido = int(input('Escoge otro numero: '))
-        print(' ')
-        
-    if numero_escogido == numero_aleatorio:
-        print('¡Ganaste!')
-    else:
-        print('Te quedaste sin vidas :(')
-        print('Suerte para la proxima')
-        print(' ')
+            print('Esa operacion no se encuentra disponible')
+            break
         
 
-def datos():
-    segundos = 5
+def datos(desicion):
+    segundos = 3
 
     print(' ')
-    nombre = input('Cual es tu nombre? -> ')
-    edad = int(input(f'Que edad tienes {nombre}? -> '))
-    nombre = nombre.upper()
+    nombre = input('Cual es tu nombre? -> ').upper()
     print(' ')
 
     print('Comenzamos en...')
@@ -96,7 +104,7 @@ def datos():
             os.system('cls')
             segundos -= 1
 
-    if edad <= 12:
+    if desicion == 'a':
         print(f'BIENVENIDO {nombre}')
         adivinanza()
     else:
@@ -107,13 +115,14 @@ def datos():
 def run():
     
     desicion = input('''
-    Quieres jugar un juego?
-    S para si y N para no --> ''').lower()
+    Quieres jugar el ahorcado o gustas hacer una
+    pequeña adivinanza de un numero?
+    H para el ahorcado y A para el otro --> ''').lower()
     
-    if desicion == 's':
-        datos()
+    if desicion == 'h' or desicion == 'a':
+        datos(desicion)
     else:
-        print('Aburrid@ :(')
+        print('Esa letra no esta disponible')
 
   
 if __name__ == '__main__':
